@@ -52,6 +52,11 @@ function setAlarm(employed, vacation){
   return employed && !vacation;
 }
 
+//or:
+function setAlarm(employed, vacation){
+  return employed > vacation;
+}
+
 //Test:
 const chai = require("chai");
 const assert = chai.assert;
