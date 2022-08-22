@@ -69,3 +69,59 @@ describe("Test Suite",()=>{
     assert.strictEqual(setAlarm(true, false), true,"Should be true.");
   });
 });
+
+
+// Area or Perimeter
+
+// You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+// Example(Input1, Input2 --> Output):
+
+// 6, 10 --> 32
+// 3, 3 --> 9
+// Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+
+//Answer
+const areaOrPerimeter = function(l , w) {
+  return l==w ? l*w : 2*(l+w)
+};
+
+//Test
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(areaOrPerimeter(4 , 4) , 16);
+Test.assertEquals(areaOrPerimeter(6 , 10) , 32);
+  });
+});
+
+
+//If you can't sleep, just count sheep!!
+
+// If you can't sleep, just count sheep!!
+
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+
+//Answer:
+var countSheep = function (num){
+  let murmur='';
+  for (let i=1; i<=num; i++){
+    murmur += `${i} sheep...`;
+  }
+  return murmur
+}
+
+//Test:
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Fixed tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(countSheep(0), "");
+    assert.strictEqual(countSheep(1), "1 sheep...");
+    assert.strictEqual(countSheep(2), "1 sheep...2 sheep...");
+    assert.strictEqual(countSheep(3), "1 sheep...2 sheep...3 sheep...");
+  });
+});
